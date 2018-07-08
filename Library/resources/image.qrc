@@ -2,5 +2,6 @@
     <qresource prefix="/new/background">
         <file>bg.jpg</file>
         <file>bg_login.png</file>
+        <file>pic.png</file>
     </qresource>
 </RCC>

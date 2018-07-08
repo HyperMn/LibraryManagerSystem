@@ -1,5 +1,7 @@
 #include "login.h"
 #include "ui_login.h"
+#include "about.h"
+#include "ui_about.h"
 
 Login::Login(QWidget *parent) :
     QDialog(parent),
@@ -17,10 +19,24 @@ Login::~Login()
 
 void Login::on_login_clicked()
 {
-  /*
+  /*需要用户名区别用户
     if (userLineEdit->text().trimmed() == "username" && pwdLineEdit->text() == "123456")
         {
             accept();
+            if(BookAdmin)
+                ui.BookAdmin->show();
+            else
+                ui.BookAdmin->hide();
+            if(SystemAdmin)
+            {
+                ui.BookAdmin->show();
+                ui.SystemAdmin->show();
+            }
+            else
+            {
+                ui.BookAdmin->hide();
+                ui.SystemAdmin->hide();
+            }
         }
     else
     {
