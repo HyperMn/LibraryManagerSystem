@@ -35,3 +35,6 @@ HEADERS += \
 FORMS += \
         mainwindow.ui \
     login.ui
+
+RESOURCES += \
+    resources/image.qrc

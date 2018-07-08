@@ -13,7 +13,7 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QPushButton" name="pushButton">
+  <widget class="QPushButton" name="login">
    <property name="geometry">
     <rect>
      <x>150</x>
@@ -72,7 +72,7 @@
     <string>密码</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_2">
+  <widget class="QPushButton" name="About">
    <property name="geometry">
     <rect>
      <x>340</x>
