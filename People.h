@@ -1,20 +1,26 @@
 #pragma once
-# include <iostream>
+#ifndef PEOPLE_H_
+#define PEOPLE_H_
+#include<iostream>
+#include<cstring>
+#include<vector>
 using namespace std;
 class People
 {
+
 public:
-	People();
-	People(int id, string pawd);
-	virtual ~People();
+	People() {};
+	~People() {};
 	void FindBook();
-	void ChgPawd();
-	void SetPawd(string);
-private:
-	int s_id;
+	void ChangePW();
+	void  input();//a way to input the message.
+	void  ReadFile(string &temp);//we have different fuction for different 
+
+public:
+	vector<string> v;//need a list to store the book one has borrowed
+	string s_id;
 	string s_password;
-	int static count;
+	People *next;
 };
 
-int People::count = 0;
-
+#endif PEOPLE_H_

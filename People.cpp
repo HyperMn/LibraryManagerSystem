@@ -1,43 +1,37 @@
-#include "People.h"
-#include<iostream>
-using namespace std;
-People::People()
+#include"People.h"
+#include<sstream>
+
+
+void People::ReadFile(string &temp) 
 {
-	count++;
-}
-
-People::People(int id, string pawd)
-{
-	s_id = id;
-	s_password = pawd;
-}
-
-
-People::~People()
-{
-}
-
-void People::FindBook() {
-	cout >> "输入你要查找的书籍：" << endl;
-	string str1;
-	cin >> str1;
-	Library::FindBook(str1);
-}
-
-void People::ChgPawd()
-{
-	cout << "请输入当前的密码：";
-	string str1,str2;
-	cin >> str1;
-	if (strcmp(str1, s_password) == 0) {
-		cout << "请输入新的密码：";
-		cin >> str2;
-		void People::SetPawd(str2);
+	string s_temp(temp);
+	int j = 0;
+	int i = 0;
+	int flag = 1;
+	string s_out_temp;
+	int i_len = s_temp.size();
+	while (i < i_len)
+	{
+		j = i;
+		while (s_temp[j] != ','&&j < i_len)
+		{
+			j++;//to store every son string's length j-i is just the length.
+		}
+		s_out_temp.assign(s_temp, i, j - i);
+		//cout << s_out_temp << endl;
+		stringstream ss;
+		ss.clear();
+		ss << s_out_temp;
+		string tempp;
+		switch (flag)
+		{
+		case 1:ss >> s_id; break;
+		case 2:ss >> s_password; break;
+		default:ss >> tempp; break;
+		}
+  		v[flag - 2] = tempp;
+		//cout << s_name << " " << s_isbn << " " << s_price << " " << s_writer << " " << s_point << " " << i_flag << endl;
+		flag++;
+		i = j + 1;
 	}
-}
-
-void People::SetPawd(string s1)
-{
-	s_password = s1;
-	cout << "Success to Set PassWord";
 }
